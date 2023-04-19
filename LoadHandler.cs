@@ -18,9 +18,7 @@ public class LoadHandler : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-
-
+    
     [SerializeField] GameObject loadingPanel;
     public void Load(string sceneName)
     {
@@ -35,10 +33,7 @@ public class LoadHandler : MonoBehaviour
 
         // Wait until the asynchronous scene fully loads
         while (!asyncLoad.isDone)
-        {
-            Debug.Log("=============" + asyncLoad.progress);
             yield return null;
-        }
 
         loadingPanel.SetActive(false);
     }
